@@ -1,0 +1,5 @@
+table_create --name zip --flags TABLE_HASH_KEY --key_type ShortText
+column_create --table zip --name address --type ShortText
+
+table_create terms TABLE_PAT_KEY|KEY_NORMALIZE ShortText --default_tokenizer TokenBigram
+column_create terms zip_address COLUMN_INDEX|WITH_POSITION zip address
